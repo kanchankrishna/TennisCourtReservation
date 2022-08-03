@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/availablecourts.css" />
+
+  </head>
+  <style>
+
+    input[type=submit] {
+      background-color: lightskyblue;
+      border: green;
+      color:black;
+      font-size: large;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    select {
+    width: 280px;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 34px;
+  }
+
+  input[type=text] {
+    width: 250px;
+    padding: 12px 20px;
+    height: 34px;
+    box-sizing: border-box;
+  }
+
+  label {
+      font-weight: bold;
+      width: 150px;
+      height: 60px;
+      font-size: 20px;
+    }
+  
+  </style>
+  <body>
+    <h1>The courts dropdown will display the courts that are available based on the time that you chose.</h1>
+
+    <form action="/register" method="POST">
+    <label for="location">Location:</label>
+    <select name="locationlist" method="GET" action="/">
+      {% for location in locationlist %}
+      <option value="{{location}}" {% if location == courtSearchCriteria.location %} selected {% endif %}>{{location}}
+      </option>
+      {% endfor %}
+    </select>
+    <label for="time">The Time You Chose:</label>
+     <select name="timeslist" method="GET" action="/">
+        {% for time in timeslist %}
+        <option value="{{time}}" {% if time == courtSearchCriteria.time %} selected {% endif %}>{{time}}
+        </option>
+        {% endfor %}
+    </select>
+    <h2>Choose a court:</h2>
+      <select name="courts" method="GET" action="/">
+        <option value="{{courts[0]}}" selected>{{courts[0]}}</option>
+        {% for court in courts[1:] %}
+        <option value="{{court}}">{{court}}</option>
+        {% endfor %}
+      </select>
+     <!-- <h2>Enter Your Name:</h2>
+      <input name="name" placeholder="name" type="text" />  -->
+      <input type="submit" value="Register" />
+    </form>
+   
+    <br />
+    <div style="width: 100%; height: 400px;">
+      <img src="/static/availablecourts.jpg" alt="Norway"
+        style="float: left; width: 50%; height: 100%; object-fit: cover;" />
+      <img src="/static/availablecourts.jpg" alt="Paris"
+        style="float: left; width: 50%; height: 100%; object-fit: cover;" />
+    </div>
+  </body>
+</html>

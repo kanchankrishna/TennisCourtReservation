@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cancel your Reservation</title>
+    <link rel="stylesheet" href="/static/cancel.css" />
+  </head>
+
+  <style>
+    input[type="submit"] {
+      background-color: yellow;
+      border: green;
+      color: black;
+      font-size: large;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    select {
+      width: 280px;
+      padding: 5px 35px 5px 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      height: 34px;
+    }
+
+    input[type="text"] {
+      width: 250px;
+      padding: 12px 20px;
+      height: 34px;
+      box-sizing: border-box;
+    }
+
+    label {
+      font-weight: bold;
+      width: 150px;
+      height: 60px;
+      font-size: 20px;
+    }
+
+  </style>
+
+  <body style="background-color: lightblue;">
+    <!--<h1>Cancel your Reservation Here</h1> -->
+    <h1>
+      Enter your name and select the location, time and court that you reserved below:
+    </h1>
+    <h2>
+      Direct yourself to the list of current reservations if you don't remember
+      yours.
+    </h2>
+    <form action="/aftercancelling" method="post">
+      <label for="times">Select The Location That You Chose:</label>
+      <select name="Location">
+        <option disable selected value="Location">Location</option>
+        <option ="DVHS">Dougherty Valley High School</option>
+        <option ="centralpark">Central Park</option>
+      </select>
+      </br>
+    </br>
+      <label for="times">Select The Time That You Chose:</label>
+      <select name="Available Times">
+        <option disable selected value=" Times">Times</option>
+        <option ="9-11AM">9-11AM</option>
+        <option ="11-1PM">11-1PM</option>
+        <option ="1-3PM">1-3PM</option>
+        <option ="3-5PM">3-5PM</option>
+        <option ="5-7PM">5-7PM</option>
+        <option ="7-9PM">7-9PM</option>
+      </select>
+    </br>
+    </br>
+     
+      <label for="courts">Select The Court That You Chose:</label>
+      <select name="Courts">
+        <option disable selected value=" Courts">Court to Cancel</option>
+        <option ="Court 1 "> Court 1</option>
+        <option ="Court 2"> Court 2</option>
+        <option ="Court 3 "> Court 3</option>
+        <option ="Court 4 "> Court 4</option>
+        <option ="Court 5 "> Court 5</option>
+        <option ="Court 6 "> Court 6</option>
+        <option ="Court 7 "> Court 7</option>
+        <option ="Court 8 "> Court 8</option>
+      </select>
+      </br>
+      </br>
+      <!-- <label for="name">Enter your name:</label> -->
+      <!--<h2>Enter Your Name:</h2>
+
+      <input name="name" placeholder="name" type="text" /> -->
+      <div>
+      </br>
+        <input type="submit" value="Cancel Reservation" />
+      </div>
+    </form>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+      {% for message in messages %}
+      <h2>{{ message }}</h2>
+      {% endfor %}
+    {% endif %} {% endwith %}
+    <br />
+    <br />
+    <br />
+    <h2><a href="\">Go back to the Home Page</a></h2>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </body>
+</html>

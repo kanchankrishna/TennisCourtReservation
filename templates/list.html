@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <title>Current Reservations</title>
+ <!-- <link rel="stylesheet" href="/static/list.css" /> -->
+  <body>
+    <h1> Current Reservations </h1>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+    
+      td,
+      th {
+        border: 1px solid darkgreen;
+        text-align: left;
+        padding: 8px;
+        background: lightyellow;
+      }
+    
+      tr:nth-child(even) {
+        background-color: lightsteelblue;
+      }
+    </style>
+    <br/>
+    <br/>
+    <table border="1">
+ 
+        <th>Name</th>
+        <th>Location</th>
+        <th>Court</th>
+        <th>Times</th>
+       
+      </thead>
+
+      {% for row in rows %}
+      <tr>
+        <td>{{row["name"]}}</td>
+        <td>{{row["location"]}}</td>
+        <td>{{row["court"]}}</td>
+        <td>{{row["times"]}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </br>
+  </br>
+  <h2><a href="/">Go back to home page</a></h2>
+    
+  </body>
+</html>

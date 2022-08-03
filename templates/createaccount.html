@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="static/bootstrap.min.css" rel="stylesheet" media="screen" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/reservation.css" />
+  </head>
+  <style>
+    /* Style the header */
+    .header {
+      padding: 20px;
+      text-align: center;
+      background: greenyellow;
+      color: black;
+    }
+
+    /* Increase the font size of the h1 element */
+    .header h1,
+    h2 {
+      font-size: 30px;
+    }
+
+    body {
+      font-family: Arial;
+    }
+
+    input[type="text"],
+    [type="password"] {
+      width: 250px;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: lightskyblue;
+      border: green;
+      color: black;
+      font-size: large;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    div.container {
+      border-radius: 5px;
+      padding: 20px;
+    }
+  </style>
+
+  <body>
+    <div class="header">
+      <h1>Welcome to the San Ramon Tennis Court Reservation System</h1>
+      <h2><i>Never have to wait for a tennis court ever again!</i></h2>
+    </div>
+    <div class="container">
+      <h2>Enter the following information to create an account:</h2>
+      <br />
+      <form action="/saveaccount" method="post">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          placeholder="Name"
+          name="name"
+          value="{{
+                      request.form.name }}"
+        />
+        <label for="email">Email Address:</label>
+        <input
+          type="text"
+          placeholder="EmailAddress"
+          name="emailaddress"
+          value="{{
+              request.form.emailaddress }}"
+        />
+
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          placeholder="Username"
+          name="username"
+          value="{{
+                      request.form.username }}"
+        />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          value="{{
+              request.form.password }}"
+        />
+        <input class="btn btn-default" type="submit" value="Create Account" />
+      </form>
+    {% if error %}
+    <p class="error"><b><strong>Error:</strong> {{ error }} {% endif %}</p></b>
+    <h2>
+    </div>
+  </body>
+</html>

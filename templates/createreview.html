@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit a review</title>
+
+  </head>
+
+  <style>
+    input[type="submit"] {
+      background-color:lightsalmon;
+      border:blue;
+      color: black;
+      font-size: large;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    select {
+      width: 150px;
+      padding: 5px 35px 5px 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      height: 34px;
+    }
+
+    input[type="text"] {
+      width: 200px;
+      padding: 12px 20px;
+      height: 34px;
+      box-sizing: border-box;
+    }
+
+    div.container {
+      padding: 20px;
+      width:50%;
+      background-color:magenta;
+    }
+  </style>
+
+  <body style = "background-color: lightpink;">
+    <h1>Please enter your review comments below:</h1>
+    <!--<p style="color: black; font-size: 20px;">
+      Bryce Janson: This app is so great because I never have to wait for a
+      court anymore.
+    </p>
+    <p style="color: black; font-size: 20px;">
+      Tom Stewart: This app is so user-friendly and innovative. I am definitely
+      going to make sure that I tell my friends about it!
+    </p>
+    <p style="color: black; font-size: 20px;">
+      Sarah Parks: This app pushes me to play more tennis because I know that I
+      am guranteed a court, so I am more motivated to play.
+    </p> -->
+    <div class="container">
+      <form method="POST" name="contact_form" action="/savereviews">
+        <!--  <input name="theuserreview" placeholder="theuserreview" type="text" /> -->
+        <textarea
+          name="theuserreview"
+          placeholder="Your Review"
+          cols="105"
+          rows="19"
+        ></textarea>
+      </div>
+        </br>
+        <input type="submit" value="Submit" />
+      </div>
+      </form>
+    </div>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <h2>
+      {{ message }}
+    </h2>
+    {% endfor %} {% endif %} {% endwith %}
+
+    <h2><a href="/">Go back to home page</a></h2>
+    <!-- 
+    <form action="/action_page.php" target="_blank">
+      <label for="review">Enter your review:</label><br />
+      <input type="text" id="review" name="review" value="" /><br />
+      <input type="submit" value="Submit Review" />
+    </form>
+
+    <div style="width: 100%; height: 400px;">
+      <img src="/static/betterreview.jpg" alt="Leave a Review" />
+    </div>
+  --></body>
+</html>
+
+<!-- style="float: left; width: 50%; height: 100%; object-fit: cover;" -->

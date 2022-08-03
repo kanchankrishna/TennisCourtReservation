@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="static/bootstrap.min.css" rel="stylesheet" media="screen" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/reservation.css" />
+  </head>
+  <style>
+    /* Style the header */
+    .header {
+      padding: 20px;
+      text-align: center;
+      background: greenyellow;
+      color: black;
+    }
+
+    /* Increase the font size of the h1 element */
+    .header h1,
+    h2 {
+      font-size: 30px;
+    }
+
+    div.container4 {
+      margin: 0;
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+    }
+
+    input[type="submit"] {
+      background-color: lightskyblue;
+      border: green;
+      color: black;
+      font-size: large;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    input[type="text"] {
+      width: 250px;
+      padding: 12px 20px;
+      height: 34px;
+      box-sizing: border-box;
+    }
+
+    input[type="password"] {
+      width: 250px;
+      padding: 12px 20px;
+      height: 34px;
+      box-sizing: border-box;
+    }
+
+    label {
+      font-weight: bold;
+      width: 150px;
+      height: 60px;
+      font-size: 20px;
+    }
+  </style>
+
+  <body>
+    <div class="header">
+      <h1>Welcome to the San Ramon Tennis Court Reservation System</h1>
+      <h2><i>Never have to wait for a tennis court ever again!</i></h2>
+    </div>
+    <div class="container4">
+      <h2>
+        Enter your email address and password below to reserve a tennis court
+      </h2>
+      <br />
+      <form action="/afterlogin" method="post">
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          placeholder="Username"
+          name="username"
+          value="{{
+              request.form.username }}"
+        />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          value="{{
+              request.form.password }}"
+        />
+        <input class="btn btn-default" type="submit" value="Login" />
+      </form>
+      {% if error %}
+      <p class="error"><b><strong>Error:</strong> {{ error }} {% endif %}</p></b>
+      <h2>
+        <a href="/createaccount"
+          >If this is your first time, click here to create an account</a
+        >
+      </h2>
+    </div>
+  </body>
+</html>

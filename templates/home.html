@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Tennis Reservation Home Page</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: xx-large;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      /* Style the header */
+      .header {
+        padding: 20px;
+        text-align: center;
+        background: greenyellow;
+        color: black;
+      }
+
+      /* Increase the font size of the h1 element */
+      .header h1,
+      h2 {
+        font-size: 30px;
+      }
+      p {
+        font-size: 20px;
+      }
+    </style>
+
+    <div class="header">
+      <h1>Welcome to the San Ramon Tennis Court Reservation System</h1>
+      <br />
+      <br />
+
+      <h2><i>Never have to wait for a tennis court ever again!</i></h2>
+      <p>{{ msg }}</p>
+    </div>
+
+    <script></script>
+
+    <!-- 
+    <style>
+      .navbar {
+        overflow: hidden; /* Hide overflow */
+        background-color: #333; /* Dark background color */
+        font-size: small;
+      }
+
+      /* Style the navigation bar links */
+      .navbar a {
+        float: left; /* Make sure that the links stay side-by-side */
+        display: block; /* Change the display to block, for responsive reasons (see below) */
+        color: white; /* White text color */
+        text-align: center; /* Center the text */
+        padding: 14px 20px; /* Add some padding */
+        text-decoration: none; /* Remove underline */
+      }
+
+      /* Right-aligned link */
+      .navbar a.right {
+        float: right; /* Float a link to the right */
+      }
+
+      /* Change color on hover/mouse-over */
+      .navbar a:hover {
+        background-color: #ddd; /* Grey background color */
+        color: black; /* Black text color */
+      }
+    </style>
+  -->
+    <!-- <div class="navbar">
+      <a href="/enternew">Reserve a Tennis Court</a>
+      <a href="/list">See Current Reservations</a>
+      <a href="help.html">Ask for Help</a>
+      <a href="reviews.html" class="right">Views Reviews</a>
+    </div>
+  -->
+    <style>
+      .navbar {
+        width: 100%;
+        background-color: magenta;
+        overflow: auto;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: xx-large;
+      }
+
+      /* Navigation links */
+      .navbar a {
+        float: left;
+        padding: 20px;
+        color: white;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 13%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+        text-align: center; /* If you want the text to be centered */
+      }
+
+      /* Add a background color on mouse-over */
+      .navbar a:hover {
+        background-color: lightseagreen;
+      }
+
+      /* Style the current/active link */
+      .navbar a.active {
+        background-color: magenta;
+      }
+
+      /* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+      @media screen and (max-width: 500px) {
+        .navbar a {
+          float: none;
+          display: block;
+          width: 100%;
+          text-align: left; /* If you want the text to be left-aligned on small screens */
+        }
+      }
+    </style>
+    <!-- The navigation menu -->
+    <div class="navbar">
+      <a href="/enternew">Reserve a Tennis Court</a>
+      <a href="/list">See Current Reservations</a>
+      <a href="/cancel">Cancel your Reservation</a>
+
+      <!-- <a href="/help">Ask for Help</a> -->
+      <a href="/viewreviews">View Reviews</a>
+      <a href="/createreview">Submit review</a>
+      <a href="/logout">Logout</a>
+    </div>
+
+    <div style="width: 100%; height: 450px">
+      <img
+        src="/static/homepagecourt.jpg"
+        alt="Norway"
+        style="float: left; width: 50%; height: 100%; object-fit: cover"
+      />
+      <img
+        src="/static/homepagefed.jpg"
+        alt="Paris"
+        style="float: left; width: 50%; height: 100%; object-fit: cover"
+      />
+    </div>
+    <!-- 
+    <img src="/static/homepagecourt.jpg" alt="Tennis Court" width="33%" />
+    <img
+      src="/static/homepagefed.jpg"
+      alt="Tennis Court"
+      width="30%"
+      height="100%"
+    />
+    <img src="/static/homepageimage2.jpg" alt="Tennis Court" width="33%" />
+    -->
+    <!-- 
+    <a href="/enternew">Reserve a Tennis Court</a>
+    <br />
+    <a href="/list">See Current Reservations</a>
+    <br />
+    <a href="help.html" target="_blank">Ask for Help</a>
+    <br />
+    <a href="reviews.html" target="_blank"> Views Reviews</a>
+    -->
+  </body>
+</html>

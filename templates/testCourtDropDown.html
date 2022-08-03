@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dropdown</title>
+  </head>
+  <body>
+    <form>
+      <select name="courts" method="GET" action="/">
+        <option value="{{courts[0]}}" selected>{{courts[0]}}</option>
+        {% for court in courts[1:] %}
+        <option value="{{court}}">{{court}}</option>
+        {% endfor %}
+      </select>
+      <input name="name" placeholder="name" type="text" />
+    </form>
+  </body>
+</html>
