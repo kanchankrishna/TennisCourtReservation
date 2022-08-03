@@ -1,0 +1,27 @@
+/* decorating the home page */
+
+h1 {
+  color: red;
+}
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+  > <style
+  > body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 40px;
+}
